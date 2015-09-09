@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<phpunit
+	bootstrap="./scripts/init.inc.php"
+	verbose="true"
+	debug="true"
+	colors="true"
+	>
+
+<testsuites>
+
+<testsuite name="all_tests">
+<directory suffix=".php">./</directory>
+<exclude>./spiffy_sap_integration_test.php</exclude>
+</testsuite>
+
+<testsuite name="beans">
+<file>spiffy_field_date_test.php</file>
+<file>spiffy_field_decimal_test.php</file>
+<file>spiffy_field_integer_test.php</file>
+<file>spiffy_field_test.php</file>
+<file>spiffy_field_text_test.php</file>
+<file>spiffy_popo_implementation_test.php</file>
+<file>spiffy_popo_test.php</file>
+</testsuite>
+
+<testsuite name="database">
+<file>spiffy_model_test.php</file>
+<file>spiffy_database_test.php</file>
+<file>spiffy_db2_test.php</file>
+<file>spiffy_mysql_test.php</file>
+<file>spiffy_oracle_test.php</file>
+<file>spiffy_phone_test.php</file>
+<file>spiffy_recordset_test.php</file>
+<file>spiffy_sqlserver_test.php</file>
+</testsuite>
+
+<testsuite name="sap">
+<file>spiffy_sap_integration_test.php</file>
+</testsuite>
+
+</testsuites>
+
+<php>
+<!-- Garante a sandbox dos testes, pois pode haver manipulação de dados no banco de dados. -->
+<var name="context" value="dev"/>
+</php>
+
+</phpunit>
